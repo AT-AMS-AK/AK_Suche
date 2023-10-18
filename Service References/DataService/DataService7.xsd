@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExceptionMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ResponseMsg" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response" nillable="true" type="tns:Response" />
+  <xs:complexType name="DC_ak_suche">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DM_svnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_gebdat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_zuname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_vorname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_DarlNr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_is_MS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DM_pvs_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_application" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_bv_ikey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_ikey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_pvs_ap" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_ak_suche" nillable="true" type="tns:DC_ak_suche" />
+  <xs:complexType name="DC_get_person_antrag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="obj_lst_ak_antraege" nillable="true" type="tns:DC_lst_ak_antraege" />
+      <xs:element minOccurs="0" name="obj_lst_ak_person" nillable="true" type="tns:DC_lst_ak_person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_get_person_antrag" nillable="true" type="tns:DC_get_person_antrag" />
+  <xs:complexType name="DC_lst_ak_antraege">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DC_ak_antraege" nillable="true" type="tns:DC_ak_antraege" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_lst_ak_antraege" nillable="true" type="tns:DC_lst_ak_antraege" />
+  <xs:complexType name="DC_ak_antraege">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DM_ant_ikey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_ikey_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_std_fkey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_knt_fkey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_eing_dat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_betrag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_verst_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_bez_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_svnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_lock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_std_extdoid_fkey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ausz_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_code_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ast_typ_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_vwz_code_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ueber_fkey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_vwz_typ_c" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_ak_antraege" nillable="true" type="tns:DC_ak_antraege" />
+  <xs:complexType name="DC_lst_ak_person">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DC_person_data" nillable="true" type="tns:DC_person_data" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_lst_ak_person" nillable="true" type="tns:DC_lst_ak_person" />
+  <xs:complexType name="DC_person_data">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DM_vorname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_nachname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_svnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_geschlecht" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_strassename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_hausnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_plz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ortname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_gebdat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_nationid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_tuer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_akadtitelid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_PVS_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_person_id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_person_data" nillable="true" type="tns:DC_person_data" />
+  <xs:complexType name="DC_bankverbindung_data">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DM_str_blz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_str_kontonr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_str_anmerkung" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_str_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_str_bic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_str_iban" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_bankverbindung_data" nillable="true" type="tns:DC_bankverbindung_data" />
+  <xs:complexType name="DC_Columns">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DC_Column" nillable="true" type="tns:DC_Column" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_Columns" nillable="true" type="tns:DC_Columns" />
+  <xs:complexType name="DC_Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DM_col_01" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_col_02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_col_03" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_col_04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_col_05" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_col_06" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_col_07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_col_08" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_col_09" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_col_10" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_Column" nillable="true" type="tns:DC_Column" />
+  <xs:complexType name="DC_wbd_antrag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DM_wbd_ikey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ant_ikey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_vwz_ikey_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_bzs_ikey_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_ast_ikey_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_abl_ikey_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_igz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_darl_nr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ant_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_akt_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_akt_von" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ant_ein" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_urg_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_gen_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_verst_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_anweis_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ausz_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_klage_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_klage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_tilg_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_d_betr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_laufzeit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_rate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_kosten" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_anmerk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ausz_gepl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_bgarant" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_rz_beg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_rz_bis_ver" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_rz_bis_real" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_mts1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_mts2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_mts3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_kstand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_mahnstufe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_faellig_mit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_abs_am" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_unter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ueber_fkey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ein_fkey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_einzug" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_last_ein" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_vvwz_ikey_neu_c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_scheidung" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_bt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ezdt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ein_idx" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ibanIn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ownerIn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ibanOut" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ownerOut" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_coopPartner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_referenz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_strasse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_wbd_ort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nachzahlungsdatum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nachzahlungsbetrag" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_wbd_antrag" nillable="true" type="tns:DC_wbd_antrag" />
+  <xs:complexType name="DC_lst_ak_cursor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DC_ak_cursor" nillable="true" type="tns:DC_ak_cursor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_lst_ak_cursor" nillable="true" type="tns:DC_lst_ak_cursor" />
+  <xs:complexType name="DC_ak_cursor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DM_User" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Index" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_01_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_02_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_03_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_04_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_05_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_06_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_07_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_08_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_09_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_10_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_11_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_12_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_13_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_14_x0020_" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dat_15_x0020_" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_ak_cursor" nillable="true" type="tns:DC_ak_cursor" />
+  <xs:complexType name="DC_lst_ak_error">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DC_ak_error" nillable="true" type="tns:DC_ak_error" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_lst_ak_error" nillable="true" type="tns:DC_lst_ak_error" />
+  <xs:complexType name="DC_ak_error">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DM_Datum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Dl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DM_Text_x0020_" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_ak_error" nillable="true" type="tns:DC_ak_error" />
+</xs:schema>

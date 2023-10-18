@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="28e78453-9fa5-4371-8ea2-eddb6066bdb3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:57808/DocumentGeneration.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DocumentGeneration1.disco" MetadataType="Disco" ID="1301d83e-ebdf-428d-8703-1cdf5d284b4c" SourceId="1" SourceUrl="http://localhost:57808/DocumentGeneration.svc?disco" />
+    <MetadataFile FileName="DocumentGeneration3.xsd" MetadataType="Schema" ID="8685289b-502d-4e27-96db-34237df7490e" SourceId="1" SourceUrl="http://localhost:57808/DocumentGeneration.svc?xsd=xsd2" />
+    <MetadataFile FileName="DocumentGeneration4.xsd" MetadataType="Schema" ID="e9fa18ab-5c67-4a02-b135-acc6b095a402" SourceId="1" SourceUrl="http://localhost:57808/DocumentGeneration.svc?xsd=xsd3" />
+    <MetadataFile FileName="DocumentGeneration5.xsd" MetadataType="Schema" ID="9656792e-7269-479b-8566-f800af72301b" SourceId="1" SourceUrl="http://localhost:57808/DocumentGeneration.svc?xsd=xsd0" />
+    <MetadataFile FileName="DocumentGeneration6.xsd" MetadataType="Schema" ID="d2bd2265-9ecb-405f-ab55-1c9995903470" SourceId="1" SourceUrl="http://localhost:57808/DocumentGeneration.svc?xsd=xsd1" />
+    <MetadataFile FileName="DocumentGeneration1.wsdl" MetadataType="Wsdl" ID="3209d124-6868-4993-9691-cef8717bc017" SourceId="1" SourceUrl="http://localhost:57808/DocumentGeneration.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

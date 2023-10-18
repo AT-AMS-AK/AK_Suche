@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55765/DataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" />
+  <xs:import schemaLocation="http://localhost:55765/DataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Get_Person_List">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="obj_suche" nillable="true" type="q1:DC_ak_suche" />
+        <xs:element minOccurs="0" name="con" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Person_ListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Get_Person_ListResult" nillable="true" type="q2:Response" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_person_list" nillable="true" type="q3:DC_get_person_antrag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Bankverbindung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="obj_suche" nillable="true" type="q4:DC_ak_suche" />
+        <xs:element minOccurs="0" name="con" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_BankverbindungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Get_BankverbindungResult" nillable="true" type="q5:Response" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_bankverbindung" nillable="true" type="q6:DC_bankverbindung_data" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_SQL_Data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Table" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Para" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_SQL_DataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_SQL_DataResult" nillable="true" type="q7:Response" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_sql" nillable="true" type="q8:DC_Columns" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_wbd_data_gepl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_wbd_data_geplResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Update_wbd_data_geplResult" nillable="true" type="q9:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Unlock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_table" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_ant_ikey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="UnlockResult" nillable="true" type="q10:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_table" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_ant_ikey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="SetLockResult" nillable="true" type="q11:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Wbd_Antrag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="obj_suche" nillable="true" type="q12:DC_ak_suche" />
+        <xs:element minOccurs="0" name="con" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Wbd_AntragResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Get_Wbd_AntragResult" nillable="true" type="q13:Response" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_wbd_antrag" nillable="true" type="q14:DC_wbd_antrag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_Init">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_BZST" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_InitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_InitResult" nillable="true" type="q15:Response" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_init" nillable="true" type="q16:DC_Columns" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Id">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_IdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Get_IdResult" nillable="true" type="q17:Response" />
+        <xs:element minOccurs="0" name="get_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Akt_TilgungsST">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DM_wbd_Ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DM_wbd_rate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DM_wbd_rz_real" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DM_wbd_rz_beg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DM_Kosten" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DM_d_Betrag" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Akt_TilgungsSTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Get_Akt_TilgungsSTResult" nillable="true" type="q18:Response" />
+        <xs:element minOccurs="0" name="Tilgungs_status" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Info_Status">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DM_wbd_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DM_wbd_rz_bis_real" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Info_StatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Get_Info_StatusResult" nillable="true" type="q19:Response" />
+        <xs:element minOccurs="0" name="str_Tilgungstext" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Mitschuldner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="var_user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="var_MTS1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="var_MTS2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="var_MTS3" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MitschuldnerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Get_MitschuldnerResult" nillable="true" type="q20:Response" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_mitschuldner" nillable="true" type="q21:DC_lst_ak_cursor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_DLEnd_Reals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RueckAb" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RueckBisVertr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Laufzeit" type="xs:int" />
+        <xs:element minOccurs="0" name="Rate" type="xs:double" />
+        <xs:element minOccurs="0" name="Kosten" type="xs:double" />
+        <xs:element minOccurs="0" name="wbd_ikey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_DLEnd_RealsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Get_DLEnd_RealsResult" nillable="true" type="q22:Response" />
+        <xs:element minOccurs="0" name="Get_DLEnd_Real" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Urgenz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_wbd_ikey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_UrgenzResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Delete_UrgenzResult" nillable="true" type="q23:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Urgenz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_wbd_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_urg_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_index" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_UrgenzResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Insert_UrgenzResult" nillable="true" type="q24:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Tilgungsstatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_wbd_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_lzs_ikey_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_von" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_bis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_rst_bis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tgs_betrag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_user" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_TilgungsstatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Insert_TilgungsstatusResult" nillable="true" type="q25:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WBD_Data_Bis_Real">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_wbd_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_date" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WBD_Data_Bis_RealResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Update_WBD_Data_Bis_RealResult" nillable="true" type="q26:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_MS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_wbd_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_nr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_MSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Delete_MSResult" nillable="true" type="q27:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_MS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_wbd_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_MS" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_nr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_MSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Update_MSResult" nillable="true" type="q28:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Bank">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_wbd_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_BV" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Typ" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_BankResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Update_BankResult" nillable="true" type="q29:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Read_Auszahlung_Geplant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Jahr" type="xs:int" />
+        <xs:element minOccurs="0" name="Monat" type="xs:int" />
+        <xs:element minOccurs="0" name="str_DLBetrag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Read_Auszahlung_GeplantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Read_Auszahlung_GeplantResult" nillable="true" type="q30:Response" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_sql" nillable="true" type="q31:DC_Columns" />
+        <xs:element minOccurs="0" name="is_Ueberstiegen" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_AID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_verwendungszweck" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_AntragsIkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_WBDIkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_vwz_ikey_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_vwz_ikey_neu_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_bzs_ikey_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_ast_ikey_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_ant_ein" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_wbd_d_betr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_klage_am" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_laufzeit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_rate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_kosten" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_abl_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_anmerkung" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_rz_beg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_rz_bis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_rz_bis_real" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_ausz_gepl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_klage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_unter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_einzug" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_mahnstufe" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_kstand" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_std_fkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_svnr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_bt" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_AIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Get_AIDResult" nillable="true" type="q32:Response" />
+        <xs:element minOccurs="0" name="str_aid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_darl_nr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Antrag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_AntragsIkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_WBDIkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_vwz_ikey_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_vwz_ikey_neu_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_bzs_ikey_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_ast_ikey_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_wbd_d_betr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_laufzeit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_rate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_kosten" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_abl_ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_anmerkung" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_klage_am" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_rz_beg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_rz_bis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_rz_bis_real" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_ausz_gepl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_klage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_unter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_einzug" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_scheidung" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_bt" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_AntragResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Update_AntragResult" nillable="true" type="q33:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Mahnstatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_WBDIkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_MSTIkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_mst_ikey_c" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_mst_datum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_mst_itera" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_mst_code_c" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_MahnstatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Insert_MahnstatusResult" nillable="true" type="q34:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Read_Buchungen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_WBDIkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Code" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Read_BuchungenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Read_BuchungenResult" nillable="true" type="q35:Response" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="get_sql" nillable="true" type="q36:DC_Columns" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Buchung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_WBDIkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_DarlNr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Bu_Date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Bu_Betr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Bu_Art" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Bu_Typ" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Bu_Txt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Bu_Storno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Bu_Aktuell" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_BuchungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Update_BuchungResult" nillable="true" type="q37:Response" />
+        <xs:element minOccurs="0" name="str_new_konto_stand" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_wbd_kto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Bu_Datum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Bu_Betrag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Ant_Ikey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Soll" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Storno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Akt_Wko_Ikey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_wbd_ktoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Insert_wbd_ktoResult" nillable="true" type="q38:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Datum_setzen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_auszahlung_am" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_anweisung_am" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Datum_setzenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Datum_setzenResult" nillable="true" type="q39:Response" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="lst_ak_error" nillable="true" type="q40:DC_lst_ak_error" />
+        <xs:element minOccurs="0" name="str_anzahl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Read_Mahnlauf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Path" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Read_MahnlaufResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Read_MahnlaufResult" nillable="true" type="q41:Response" />
+        <xs:element minOccurs="0" name="intCRA" type="xs:int" />
+        <xs:element minOccurs="0" name="intCTilg" type="xs:int" />
+        <xs:element minOccurs="0" name="intCUber" type="xs:int" />
+        <xs:element minOccurs="0" name="intCMST1" type="xs:int" />
+        <xs:element minOccurs="0" name="intCMST2" type="xs:int" />
+        <xs:element minOccurs="0" name="intCMST3" type="xs:int" />
+        <xs:element minOccurs="0" name="intCMST4" type="xs:int" />
+        <xs:element minOccurs="0" name="str_file" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Mahnlauf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_Path" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_File" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_MahnlaufResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Delete_MahnlaufResult" nillable="true" type="q42:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Mahnlauf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MahnlaufResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="MahnlaufResult" nillable="true" type="q43:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reset_Mahnlauf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reset_MahnlaufResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Reset_MahnlaufResult" nillable="true" type="q44:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Select_Mahnlauf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Select_MahnlaufResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Select_MahnlaufResult" nillable="true" type="q45:Response" />
+        <xs:element minOccurs="0" name="str_info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reset_Jahr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reset_JahrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Reset_JahrResult" nillable="true" type="q46:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Export_WBD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_usernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_konto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_klage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_datart" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_datum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_trenn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_pfad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_statusWort" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Export_WBDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Export_WBDResult" nillable="true" type="q47:Response" />
+        <xs:element minOccurs="0" name="str_info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Auswertung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_vorlage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_AuswertungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Delete_AuswertungResult" nillable="true" type="q48:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteDB_Auswertung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_vorlage_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_von" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_bis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_bzs" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteDB_AuswertungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="WriteDB_AuswertungResult" nillable="true" type="q49:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteDB_Serientermin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_datum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_zeit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="str_dauer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteDB_SerienterminResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="WriteDB_SerienterminResult" nillable="true" type="q50:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Print_List_Box">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="printer" nillable="true" type="xs:string" />
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lst_List" nillable="true" type="q51:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Print_List_BoxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Print_List_BoxResult" nillable="true" type="q52:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Print_File">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="printer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ori_file" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ori_path" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Print_FileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" minOccurs="0" name="Print_FileResult" nillable="true" type="q53:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C4032EB-0A39-43E3-BA91-3305FBD34851}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Addit.AK.WBD.AK_Suche</RootNamespace>
+    <AssemblyName>AK_Suche</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\rohrerm\Documents\AKSuche_publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>WBD.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Addit.AK.WBD.AK_Suche.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>BFF762C9B39B250A553A2C236877BCD4C6631A78</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AK_Suche_2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AkUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SVN\WBD\DAL\DAL\DAL\bin\Release\AkUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DAL">
+      <HintPath>..\..\SVN\WBD\DAL\DAL\DAL\bin\Release\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebPCI, Version=3.4.0.0, Culture=neutral, PublicKeyToken=aaa6568ce230efdf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Miracle\WebPCI.dll</HintPath>
+    </Reference>
+    <Reference Include="WebPCIInterop">
+      <HintPath>..\..\Miracle\WebPCIInterop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AKK_Helper.cs" />
+    <Compile Include="BankInfo.cs" />
+    <Compile Include="CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frm_AK_Suche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Antraege.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Antraege.Designer.cs">
+      <DependentUpon>frm_Antraege.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Auswertung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Auswertung.Designer.cs">
+      <DependentUpon>frm_Auswertung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Bank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Bank.Designer.cs">
+      <DependentUpon>frm_Bank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Buchen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Buchen.Designer.cs">
+      <DependentUpon>frm_Buchen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Datentraeger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Datentraeger.Designer.cs">
+      <DependentUpon>frm_Datentraeger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Einlesen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Einlesen.Designer.cs">
+      <DependentUpon>frm_Einlesen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Einzeldruck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Einzeldruck.Designer.cs">
+      <DependentUpon>frm_Einzeldruck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Export.Designer.cs">
+      <DependentUpon>frm_Export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Konto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Konto.Designer.cs">
+      <DependentUpon>frm_Konto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Leihgeld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Leihgeld.Designer.cs">
+      <DependentUpon>frm_Leihgeld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Log.Designer.cs">
+      <DependentUpon>frm_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Mahnstatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Mahnstatus.Designer.cs">
+      <DependentUpon>frm_Mahnstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_mitschuldner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mitschuldner.Designer.cs">
+      <DependentUpon>frm_mitschuldner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Reset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Reset.Designer.cs">
+      <DependentUpon>frm_Reset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Seriendruck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Seriendruck.Designer.cs">
+      <DependentUpon>frm_Seriendruck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Urgenzen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Urgenzen.Designer.cs">
+      <DependentUpon>frm_Urgenzen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Version.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Version.Designer.cs">
+      <DependentUpon>frm_Version.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_wbd_antrag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_wbd_antrag.Designer.cs">
+      <DependentUpon>frm_wbd_antrag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Laufzeitstatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Laufzeitstatus.Designer.cs">
+      <DependentUpon>frm_Laufzeitstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Mahnlauf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Mahnlauf.Designer.cs">
+      <DependentUpon>frm_Mahnlauf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AuthService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BankRecordCarrier\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DocumentGeneration\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CrystalReport.resx">
+      <DependentUpon>CrystalReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AK_Suche.resx">
+      <DependentUpon>frm_AK_Suche.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Antraege.resx">
+      <DependentUpon>frm_Antraege.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Auswertung.resx">
+      <DependentUpon>frm_Auswertung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Bank.resx">
+      <DependentUpon>frm_Bank.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Buchen.resx">
+      <DependentUpon>frm_Buchen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Datentraeger.resx">
+      <DependentUpon>frm_Datentraeger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Einlesen.resx">
+      <DependentUpon>frm_Einlesen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Einzeldruck.resx">
+      <DependentUpon>frm_Einzeldruck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Export.resx">
+      <DependentUpon>frm_Export.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Konto.resx">
+      <DependentUpon>frm_Konto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Leihgeld.resx">
+      <DependentUpon>frm_Leihgeld.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Log.resx">
+      <DependentUpon>frm_Log.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Mahnstatus.resx">
+      <DependentUpon>frm_Mahnstatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mitschuldner.resx">
+      <DependentUpon>frm_mitschuldner.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Reset.resx">
+      <DependentUpon>frm_Reset.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Seriendruck.resx">
+      <DependentUpon>frm_Seriendruck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Urgenzen.resx">
+      <DependentUpon>frm_Urgenzen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Version.resx">
+      <DependentUpon>frm_Version.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_wbd_antrag.resx">
+      <DependentUpon>frm_wbd_antrag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Laufzeitstatus.resx">
+      <DependentUpon>frm_Laufzeitstatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Mahnlauf.resx">
+      <DependentUpon>frm_Mahnlauf.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="AK_Suche_1_TemporaryKey.pfx" />
+    <None Include="AK_Suche_2_TemporaryKey.pfx" />
+    <None Include="AK_Suche_TemporaryKey.pfx" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\AuthService\Addit.AK.WBD.AK_Suche.AuthService.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthService\Addit.AK.WBD.AK_Suche.AuthService.Session.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthService\Addit.AK.WBD.AK_Suche.AuthService.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthService\AuthService1.wsdl" />
+    <None Include="Service References\AuthService\AuthService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthService\AuthService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthService\AuthService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthService\AuthService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthService\AuthService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BankRecordCarrier\Addit.AK.WBD.AK_Suche.BankRecordCarrier.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BankRecordCarrier\BankRecordCarrier1.wsdl" />
+    <None Include="Service References\BankRecordCarrier\BankRecordCarrier4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BankRecordCarrier\BankRecordCarrier41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BankRecordCarrier\BankRecordCarrier42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BankRecordCarrier\BankRecordCarrier43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataService\Addit.AK.WBD.AK_Suche.DataService.DC_bankverbindung_data.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataService\Addit.AK.WBD.AK_Suche.DataService.DC_Columns.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataService\Addit.AK.WBD.AK_Suche.DataService.DC_get_person_antrag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataService\Addit.AK.WBD.AK_Suche.DataService.DC_lst_ak_cursor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataService\Addit.AK.WBD.AK_Suche.DataService.DC_lst_ak_error.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataService\Addit.AK.WBD.AK_Suche.DataService.DC_wbd_antrag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataService\Addit.AK.WBD.AK_Suche.DataService.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AuthService\" />
+    <WCFMetadataStorage Include="Service References\BankRecordCarrier\" />
+    <WCFMetadataStorage Include="Service References\DataService\" />
+    <WCFMetadataStorage Include="Service References\DocumentGeneration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataService\DataService1.wsdl" />
+    <None Include="Service References\DataService\DataService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataService\DataService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataService\DataService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataService\DataService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DocumentGeneration\Addit.AK.WBD.AK_Suche.DocumentGeneration.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentGeneration\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DocumentGeneration\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DocumentGeneration\DocumentGeneration1.wsdl" />
+    <None Include="Service References\DocumentGeneration\DocumentGeneration3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentGeneration\DocumentGeneration4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentGeneration\DocumentGeneration5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentGeneration\DocumentGeneration6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentGeneration\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AuthService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BankRecordCarrier\configuration91.svcinfo" />
+    <None Include="Service References\BankRecordCarrier\configuration.svcinfo" />
+    <None Include="Service References\BankRecordCarrier\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DocumentGeneration\DocumentGeneration1.disco" />
+    <None Include="Service References\AuthService\AuthService1.disco" />
+    <None Include="Service References\DataService\DataService1.disco" />
+    <None Include="Service References\BankRecordCarrier\BankRecordCarrier1.disco" />
+    <Content Include="WBD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

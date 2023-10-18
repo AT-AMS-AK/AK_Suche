@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:62939/DataService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:62939/DataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:62939/DataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Addit.AK.WBD.DataService" />
+      <xsd:import schemaLocation="http://localhost:62939/DataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDataService_CreateNachzahlungTemp_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNachzahlungTemp" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateNachzahlungTemp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNachzahlungTempResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetNachzahlungsbetrag_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNachzahlungsbetrag" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetNachzahlungsbetrag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNachzahlungsbetragResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Person_List_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Person_List" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Person_List_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Person_ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Bankverbindung_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Bankverbindung" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Bankverbindung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_BankverbindungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_get_SQL_Data_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_SQL_Data" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_get_SQL_Data_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_SQL_DataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_wbd_data_gepl_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_wbd_data_gepl" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_wbd_data_gepl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_wbd_data_geplResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Unlock_InputMessage">
+    <wsdl:part name="parameters" element="tns:Unlock" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Unlock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SetLock_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetLock" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SetLock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetLockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Wbd_Antrag_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Wbd_Antrag" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Wbd_Antrag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Wbd_AntragResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_get_Init_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_Init" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_get_Init_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_InitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Id_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Id" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Akt_TilgungsST_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Akt_TilgungsST" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Akt_TilgungsST_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Akt_TilgungsSTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Info_Status_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Info_Status" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Info_Status_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Info_StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Mitschuldner_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Mitschuldner" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_Mitschuldner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_MitschuldnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_DLEnd_Reals_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DLEnd_Reals" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_DLEnd_Reals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_DLEnd_RealsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Delete_Urgenz_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Urgenz" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Delete_Urgenz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_UrgenzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_Urgenz_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_Urgenz" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_Urgenz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_UrgenzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_Tilgungsstatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_Tilgungsstatus" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_Tilgungsstatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_TilgungsstatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_WBD_Data_Bis_Real_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_WBD_Data_Bis_Real" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_WBD_Data_Bis_Real_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_WBD_Data_Bis_RealResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Delete_MS_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_MS" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Delete_MS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_MSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_MS_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_MS" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_MS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_MSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_Bank_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Bank" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_Bank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_BankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Read_Auszahlung_Geplant_InputMessage">
+    <wsdl:part name="parameters" element="tns:Read_Auszahlung_Geplant" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Read_Auszahlung_Geplant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Read_Auszahlung_GeplantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_AID_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_AID" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Get_AID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_AIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_Antrag_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Antrag" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_Antrag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_AntragResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_Mahnstatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_Mahnstatus" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_Mahnstatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_MahnstatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Read_Buchungen_InputMessage">
+    <wsdl:part name="parameters" element="tns:Read_Buchungen" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Read_Buchungen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Read_BuchungenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_Buchung_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Buchung" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Update_Buchung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_BuchungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_wbd_kto_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_wbd_kto" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_wbd_kto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_wbd_ktoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Datum_setzen_InputMessage">
+    <wsdl:part name="parameters" element="tns:Datum_setzen" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Datum_setzen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Datum_setzenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Read_Mahnlauf_InputMessage">
+    <wsdl:part name="parameters" element="tns:Read_Mahnlauf" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Read_Mahnlauf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Read_MahnlaufResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Read_MahnlaufISH_InputMessage">
+    <wsdl:part name="parameters" element="tns:Read_MahnlaufISH" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Read_MahnlaufISH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Read_MahnlaufISHResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Delete_Mahnlauf_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Mahnlauf" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Delete_Mahnlauf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_MahnlaufResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Mahnlauf_InputMessage">
+    <wsdl:part name="parameters" element="tns:Mahnlauf" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Mahnlauf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MahnlaufResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_ISHMahnlauf_InputMessage">
+    <wsdl:part name="parameters" element="tns:ISHMahnlauf" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_ISHMahnlauf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ISHMahnlaufResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Reset_Mahnlauf_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reset_Mahnlauf" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Reset_Mahnlauf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Reset_MahnlaufResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Select_Mahnlauf_InputMessage">
+    <wsdl:part name="parameters" element="tns:Select_Mahnlauf" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Select_Mahnlauf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Select_MahnlaufResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Reset_Jahr_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reset_Jahr" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Reset_Jahr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Reset_JahrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Export_WBD_InputMessage">
+    <wsdl:part name="parameters" element="tns:Export_WBD" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Export_WBD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Export_WBDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Delete_Auswertung_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Auswertung" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Delete_Auswertung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_AuswertungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_WriteDB_Auswertung_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteDB_Auswertung" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_WriteDB_Auswertung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteDB_AuswertungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_WriteDB_Serientermin_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteDB_Serientermin" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_WriteDB_Serientermin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteDB_SerienterminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Print_List_Box_InputMessage">
+    <wsdl:part name="parameters" element="tns:Print_List_Box" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Print_List_Box_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Print_List_BoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Print_File_InputMessage">
+    <wsdl:part name="parameters" element="tns:Print_File" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Print_File_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Print_FileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_WBD_Protocol_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_WBD_Protocol" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Insert_WBD_Protocol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_WBD_ProtocolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_update_BankDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:update_BankDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_update_BankDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:update_BankDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDataService">
+    <wsdl:operation name="CreateNachzahlungTemp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateNachzahlungTemp" message="tns:IDataService_CreateNachzahlungTemp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateNachzahlungTempResponse" message="tns:IDataService_CreateNachzahlungTemp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNachzahlungsbetrag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetNachzahlungsbetrag" message="tns:IDataService_GetNachzahlungsbetrag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetNachzahlungsbetragResponse" message="tns:IDataService_GetNachzahlungsbetrag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Person_List">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Get_Person_List" message="tns:IDataService_Get_Person_List_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Get_Person_ListResponse" message="tns:IDataService_Get_Person_List_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Bankverbindung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Get_Bankverbindung" message="tns:IDataService_Get_Bankverbindung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Get_BankverbindungResponse" message="tns:IDataService_Get_Bankverbindung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_SQL_Data">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/get_SQL_Data" message="tns:IDataService_get_SQL_Data_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/get_SQL_DataResponse" message="tns:IDataService_get_SQL_Data_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_wbd_data_gepl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Update_wbd_data_gepl" message="tns:IDataService_Update_wbd_data_gepl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Update_wbd_data_geplResponse" message="tns:IDataService_Update_wbd_data_gepl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Unlock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Unlock" message="tns:IDataService_Unlock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/UnlockResponse" message="tns:IDataService_Unlock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SetLock" message="tns:IDataService_SetLock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SetLockResponse" message="tns:IDataService_SetLock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Wbd_Antrag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Get_Wbd_Antrag" message="tns:IDataService_Get_Wbd_Antrag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Get_Wbd_AntragResponse" message="tns:IDataService_Get_Wbd_Antrag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_Init">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/get_Init" message="tns:IDataService_get_Init_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/get_InitResponse" message="tns:IDataService_get_Init_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Get_Id" message="tns:IDataService_Get_Id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Get_IdResponse" message="tns:IDataService_Get_Id_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Akt_TilgungsST">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Get_Akt_TilgungsST" message="tns:IDataService_Get_Akt_TilgungsST_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Get_Akt_TilgungsSTResponse" message="tns:IDataService_Get_Akt_TilgungsST_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Info_Status">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Get_Info_Status" message="tns:IDataService_Get_Info_Status_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Get_Info_StatusResponse" message="tns:IDataService_Get_Info_Status_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Mitschuldner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Get_Mitschuldner" message="tns:IDataService_Get_Mitschuldner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Get_MitschuldnerResponse" message="tns:IDataService_Get_Mitschuldner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_DLEnd_Reals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Get_DLEnd_Reals" message="tns:IDataService_Get_DLEnd_Reals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Get_DLEnd_RealsResponse" message="tns:IDataService_Get_DLEnd_Reals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Urgenz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Delete_Urgenz" message="tns:IDataService_Delete_Urgenz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Delete_UrgenzResponse" message="tns:IDataService_Delete_Urgenz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Urgenz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Insert_Urgenz" message="tns:IDataService_Insert_Urgenz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Insert_UrgenzResponse" message="tns:IDataService_Insert_Urgenz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Tilgungsstatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Insert_Tilgungsstatus" message="tns:IDataService_Insert_Tilgungsstatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Insert_TilgungsstatusResponse" message="tns:IDataService_Insert_Tilgungsstatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_WBD_Data_Bis_Real">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Update_WBD_Data_Bis_Real" message="tns:IDataService_Update_WBD_Data_Bis_Real_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Update_WBD_Data_Bis_RealResponse" message="tns:IDataService_Update_WBD_Data_Bis_Real_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_MS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Delete_MS" message="tns:IDataService_Delete_MS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Delete_MSResponse" message="tns:IDataService_Delete_MS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_MS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Update_MS" message="tns:IDataService_Update_MS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Update_MSResponse" message="tns:IDataService_Update_MS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Bank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Update_Bank" message="tns:IDataService_Update_Bank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Update_BankResponse" message="tns:IDataService_Update_Bank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Read_Auszahlung_Geplant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Read_Auszahlung_Geplant" message="tns:IDataService_Read_Auszahlung_Geplant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Read_Auszahlung_GeplantResponse" message="tns:IDataService_Read_Auszahlung_Geplant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_AID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Get_AID" message="tns:IDataService_Get_AID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Get_AIDResponse" message="tns:IDataService_Get_AID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Antrag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Update_Antrag" message="tns:IDataService_Update_Antrag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Update_AntragResponse" message="tns:IDataService_Update_Antrag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Mahnstatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Insert_Mahnstatus" message="tns:IDataService_Insert_Mahnstatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Insert_MahnstatusResponse" message="tns:IDataService_Insert_Mahnstatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Read_Buchungen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Read_Buchungen" message="tns:IDataService_Read_Buchungen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Read_BuchungenResponse" message="tns:IDataService_Read_Buchungen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Buchung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Update_Buchung" message="tns:IDataService_Update_Buchung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Update_BuchungResponse" message="tns:IDataService_Update_Buchung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_wbd_kto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Insert_wbd_kto" message="tns:IDataService_Insert_wbd_kto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Insert_wbd_ktoResponse" message="tns:IDataService_Insert_wbd_kto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Datum_setzen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Datum_setzen" message="tns:IDataService_Datum_setzen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Datum_setzenResponse" message="tns:IDataService_Datum_setzen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Read_Mahnlauf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Read_Mahnlauf" message="tns:IDataService_Read_Mahnlauf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Read_MahnlaufResponse" message="tns:IDataService_Read_Mahnlauf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Read_MahnlaufISH">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Read_MahnlaufISH" message="tns:IDataService_Read_MahnlaufISH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Read_MahnlaufISHResponse" message="tns:IDataService_Read_MahnlaufISH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Mahnlauf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Delete_Mahnlauf" message="tns:IDataService_Delete_Mahnlauf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Delete_MahnlaufResponse" message="tns:IDataService_Delete_Mahnlauf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Mahnlauf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Mahnlauf" message="tns:IDataService_Mahnlauf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/MahnlaufResponse" message="tns:IDataService_Mahnlauf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ISHMahnlauf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/ISHMahnlauf" message="tns:IDataService_ISHMahnlauf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/ISHMahnlaufResponse" message="tns:IDataService_ISHMahnlauf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reset_Mahnlauf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Reset_Mahnlauf" message="tns:IDataService_Reset_Mahnlauf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Reset_MahnlaufResponse" message="tns:IDataService_Reset_Mahnlauf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Select_Mahnlauf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Select_Mahnlauf" message="tns:IDataService_Select_Mahnlauf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Select_MahnlaufResponse" message="tns:IDataService_Select_Mahnlauf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reset_Jahr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Reset_Jahr" message="tns:IDataService_Reset_Jahr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Reset_JahrResponse" message="tns:IDataService_Reset_Jahr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Export_WBD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Export_WBD" message="tns:IDataService_Export_WBD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Export_WBDResponse" message="tns:IDataService_Export_WBD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Auswertung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Delete_Auswertung" message="tns:IDataService_Delete_Auswertung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Delete_AuswertungResponse" message="tns:IDataService_Delete_Auswertung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteDB_Auswertung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/WriteDB_Auswertung" message="tns:IDataService_WriteDB_Auswertung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/WriteDB_AuswertungResponse" message="tns:IDataService_WriteDB_Auswertung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteDB_Serientermin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/WriteDB_Serientermin" message="tns:IDataService_WriteDB_Serientermin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/WriteDB_SerienterminResponse" message="tns:IDataService_WriteDB_Serientermin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Print_List_Box">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Print_List_Box" message="tns:IDataService_Print_List_Box_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Print_List_BoxResponse" message="tns:IDataService_Print_List_Box_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Print_File">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Print_File" message="tns:IDataService_Print_File_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Print_FileResponse" message="tns:IDataService_Print_File_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_WBD_Protocol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Insert_WBD_Protocol" message="tns:IDataService_Insert_WBD_Protocol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/Insert_WBD_ProtocolResponse" message="tns:IDataService_Insert_WBD_Protocol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update_BankDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/update_BankDetails" message="tns:IDataService_update_BankDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/update_BankDetailsResponse" message="tns:IDataService_update_BankDetails_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDataService" type="tns:IDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNachzahlungTemp">
+      <soap:operation soapAction="http://tempuri.org/IDataService/CreateNachzahlungTemp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNachzahlungsbetrag">
+      <soap:operation soapAction="http://tempuri.org/IDataService/GetNachzahlungsbetrag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Person_List">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Get_Person_List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Bankverbindung">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Get_Bankverbindung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_SQL_Data">
+      <soap:operation soapAction="http://tempuri.org/IDataService/get_SQL_Data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_wbd_data_gepl">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Update_wbd_data_gepl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unlock">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Unlock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLock">
+      <soap:operation soapAction="http://tempuri.org/IDataService/SetLock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Wbd_Antrag">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Get_Wbd_Antrag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_Init">
+      <soap:operation soapAction="http://tempuri.org/IDataService/get_Init" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Id">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Get_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Akt_TilgungsST">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Get_Akt_TilgungsST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Info_Status">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Get_Info_Status" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Mitschuldner">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Get_Mitschuldner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_DLEnd_Reals">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Get_DLEnd_Reals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Urgenz">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Delete_Urgenz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Urgenz">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Insert_Urgenz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Tilgungsstatus">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Insert_Tilgungsstatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_WBD_Data_Bis_Real">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Update_WBD_Data_Bis_Real" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_MS">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Delete_MS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_MS">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Update_MS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Bank">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Update_Bank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read_Auszahlung_Geplant">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Read_Auszahlung_Geplant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_AID">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Get_AID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Antrag">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Update_Antrag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Mahnstatus">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Insert_Mahnstatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read_Buchungen">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Read_Buchungen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Buchung">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Update_Buchung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_wbd_kto">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Insert_wbd_kto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Datum_setzen">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Datum_setzen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read_Mahnlauf">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Read_Mahnlauf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read_MahnlaufISH">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Read_MahnlaufISH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Mahnlauf">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Delete_Mahnlauf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mahnlauf">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Mahnlauf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ISHMahnlauf">
+      <soap:operation soapAction="http://tempuri.org/IDataService/ISHMahnlauf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reset_Mahnlauf">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Reset_Mahnlauf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select_Mahnlauf">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Select_Mahnlauf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reset_Jahr">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Reset_Jahr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Export_WBD">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Export_WBD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Auswertung">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Delete_Auswertung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteDB_Auswertung">
+      <soap:operation soapAction="http://tempuri.org/IDataService/WriteDB_Auswertung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteDB_Serientermin">
+      <soap:operation soapAction="http://tempuri.org/IDataService/WriteDB_Serientermin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print_List_Box">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Print_List_Box" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print_File">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Print_File" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_WBD_Protocol">
+      <soap:operation soapAction="http://tempuri.org/IDataService/Insert_WBD_Protocol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_BankDetails">
+      <soap:operation soapAction="http://tempuri.org/IDataService/update_BankDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataService">
+    <wsdl:port name="BasicHttpBinding_IDataService" binding="tns:BasicHttpBinding_IDataService">
+      <soap:address location="http://localhost:62939/DataService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
